@@ -534,7 +534,10 @@ body.fade-out{
 }
 
 .cert-img{
+  display:block;
   width:100%;
+  height:auto;
+  object-fit:contain;
   border-radius:8px;
 }
 
