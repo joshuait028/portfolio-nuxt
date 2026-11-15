@@ -41,12 +41,22 @@ const emit = defineEmits<{
 </template>
 
 <style scoped>
+.cert-card:hover {
+  transform: translateY(-5px);
+  border-color: #3a3a3a;
+}
+
 .cert-image-button {
   display: block;
   width: 100%;
   padding: 0;
   border: 0;
   background: transparent;
-  cursor: zoom-in;
+  cursor: pointer;
+}
+
+.cert-image-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
 }
 </style>
