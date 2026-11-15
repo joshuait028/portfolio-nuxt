@@ -2,6 +2,18 @@
 definePageMeta({
   alias: '/contact-me.html'
 })
+
+useHead({
+  title: 'Joshua Roy Arrogante | Contact'
+})
+
+useSeoMeta({
+  description: 'Connect with Joshua Roy Arrogante through GitHub, Instagram, or LinkedIn. He is open to conversations and opportunities to learn.',
+  ogTitle: 'Joshua Roy Arrogante | Contact',
+  ogDescription: 'Connect with Joshua Roy Arrogante through GitHub, Instagram, or LinkedIn. He is open to conversations and opportunities to learn.',
+  ogType: 'website',
+  twitterCard: 'summary'
+})
 </script>
 
 <template>
