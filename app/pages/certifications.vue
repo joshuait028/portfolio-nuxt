@@ -24,6 +24,7 @@ interface SweetAlertWindow extends Window {
 }
 
 useHead({
+  title: 'Joshua Roy Arrogante | Certifications',
   link: [
     {
       rel: 'stylesheet',
@@ -40,6 +41,14 @@ useHead({
       defer: true
     }
   ]
+})
+
+useSeoMeta({
+  description: 'Explore certificates earned by Joshua Roy Arrogante while learning technology and programming, including Microsoft Word, Java programming, and modern databases.',
+  ogTitle: 'Joshua Roy Arrogante | Certifications',
+  ogDescription: 'Explore certificates earned by Joshua Roy Arrogante while learning technology and programming, including Microsoft Word, Java programming, and modern databases.',
+  ogType: 'website',
+  twitterCard: 'summary'
 })
 
 const certificates: Certificate[] = [
