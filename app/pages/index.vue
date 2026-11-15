@@ -1,3 +1,17 @@
+<script setup lang="ts">
+useHead({
+  title: 'Joshua Roy Arrogante | Web Portfolio'
+})
+
+useSeoMeta({
+  description: 'Portfolio of Joshua Roy Arrogante, an aspiring web developer.',
+  ogTitle: 'Joshua Roy Arrogante | Web Portfolio',
+  ogDescription: 'Portfolio of Joshua Roy Arrogante, an aspiring web developer.',
+  ogType: 'website',
+  twitterCard: 'summary'
+})
+</script>
+
 <template>
   <main class="home-section">
     <div class="profile-container">
