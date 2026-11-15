@@ -2,6 +2,18 @@
 definePageMeta({
   alias: '/about-me.html'
 })
+
+useHead({
+  title: 'Joshua Roy Arrogante | About'
+})
+
+useSeoMeta({
+  description: 'Learn about Joshua Roy Arrogante, a BSIT student at St. Dominic College of Asia, his career goals in networking and web development, and his interests.',
+  ogTitle: 'Joshua Roy Arrogante | About',
+  ogDescription: 'Learn about Joshua Roy Arrogante, a BSIT student at St. Dominic College of Asia, his career goals in networking and web development, and his interests.',
+  ogType: 'website',
+  twitterCard: 'summary'
+})
 </script>
 
 <template>
