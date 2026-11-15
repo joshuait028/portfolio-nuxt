@@ -3,6 +3,18 @@ definePageMeta({
   alias: '/tech-stack.html'
 })
 
+useHead({
+  title: 'Joshua Roy Arrogante | Tech Stack'
+})
+
+useSeoMeta({
+  description: 'Explore the technologies Joshua Roy Arrogante is currently learning and working with, including HTML, CSS, JavaScript, Java, SQL, Git, GitHub, and VS Code.',
+  ogTitle: 'Joshua Roy Arrogante | Tech Stack',
+  ogDescription: 'Explore the technologies Joshua Roy Arrogante is currently learning and working with, including HTML, CSS, JavaScript, Java, SQL, Git, GitHub, and VS Code.',
+  ogType: 'website',
+  twitterCard: 'summary'
+})
+
 const technologies = [
   { name: 'HTML', image: '/images/html-logo.png', alt: 'HTML Logo' },
   { name: 'CSS', image: '/images/css-logo.png', alt: 'CSS Logo' },
