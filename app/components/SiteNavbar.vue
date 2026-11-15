@@ -2,20 +2,13 @@
 const route = useRoute()
 const isMenuOpen = ref(false)
 
-const navigationItems = computed(() => {
-  const home = { label: 'Home', to: '/' }
-  const about = { label: 'About', to: '/about-me.html' }
-  const certifications = { label: 'Certifications', to: '/certifications.html' }
-  const techStack = { label: 'Tech Stack', to: '/tech-stack.html' }
-
-  return route.path === '/tech-stack.html'
-    ? [home, about, techStack, certifications]
-    : [home, about, certifications, techStack]
-})
-
-const contactLabel = computed(() =>
-  route.path === '/contact-me.html' ? 'Contact Me' : 'Contact'
-)
+const navigationItems = [
+  { label: 'Home', to: '/' },
+  { label: 'About', to: '/about-me.html' },
+  { label: 'Tech Stack', to: '/tech-stack.html' },
+  { label: 'Certifications', to: '/certifications.html' },
+  { label: 'Contact Me', to: '/contact-me.html' }
+]
 
 const largeLogo = computed(() =>
   route.path === '/' || route.path === '/tech-stack.html'
@@ -33,8 +26,8 @@ watch(() => route.path, closeMenu)
 </script>
 
 <template>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
+  <nav class="navbar bg-base-100 shadow-sm" role="navigation" aria-label="main navigation">
+    <div class="flex-1 navbar-brand">
       <NuxtLink class="navbar-item" to="/" aria-label="Joshua Arrogante home">
         <img
           src="/images/arrogante-website-logo.svg"
@@ -42,53 +35,45 @@ watch(() => route.path, closeMenu)
           :class="{ 'is-large': largeLogo }"
         >
       </NuxtLink>
-
-      <button
-        class="navbar-burger"
-        :class="{ 'is-active': isMenuOpen }"
-        type="button"
-        :aria-expanded="isMenuOpen"
-        aria-controls="navbarMenu"
-        :aria-label="isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'"
-        @click="isMenuOpen = !isMenuOpen"
-      >
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </button>
     </div>
 
+    <button
+      class="navbar-burger"
+      :class="{ 'is-active': isMenuOpen }"
+      type="button"
+      :aria-expanded="isMenuOpen"
+      aria-controls="navbarMenu"
+      :aria-label="isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'"
+      @click="isMenuOpen = !isMenuOpen"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
     <div
+      class="flex-none navbar-menu"
       id="navbarMenu"
-      class="navbar-menu"
       :class="{ 'is-active': isMenuOpen }"
     >
-      <div class="navbar-start"></div>
-
-      <div class="navbar-end">
-        <NuxtLink
-          v-for="item in navigationItems"
-          :key="item.to"
-          class="navbar-item"
-          :class="{ 'is-active': isActive(item.to) }"
-          :to="item.to"
-          @click="closeMenu"
-        >
-          {{ item.label }}
-        </NuxtLink>
-
-        <div class="navbar-item">
+      <ul class="menu menu-horizontal">
+        <li v-for="item in navigationItems" :key="item.to">
           <NuxtLink
-            class="button is-primary"
-            :class="{ 'is-active': isActive('/contact-me.html') }"
-            to="/contact-me.html"
+            :class="[
+              item.to === '/contact-me.html'
+                ? 'button is-primary navbar-item'
+                : 'navbar-item',
+              { 'is-active': isActive(item.to) }
+            ]"
+            :to="item.to"
+            :aria-current="isActive(item.to) ? 'page' : undefined"
             @click="closeMenu"
           >
-            <strong>{{ contactLabel }}</strong>
+            {{ item.label }}
           </NuxtLink>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
   </nav>
 </template>
