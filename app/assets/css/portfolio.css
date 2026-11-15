@@ -48,6 +48,16 @@ body.fade-out{
   transition:opacity 0.35s ease;
 }
 
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.35s ease;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+
 /* NAVBAR */
 .navbar{
   position:fixed;
@@ -85,12 +95,23 @@ body.fade-out{
   border-bottom:2px solid white;
 }
 
+.navbar-burger{
+  border:0;
+  background:transparent;
+  color:inherit;
+  cursor:pointer;
+}
+
 .navbar-burger span{
   background:rgb(255, 255, 255);
 }
 
 .navbar img{
   max-height:50px;
+}
+
+.navbar .navbar-brand img.is-large{
+  max-height:60px;
 }
 
 /* HOME */
@@ -494,6 +515,10 @@ body.fade-out{
   }
 
   .navbar img{
+    max-height:40px;
+  }
+
+  .navbar .navbar-brand img.is-large{
     max-height:40px;
   }
 
